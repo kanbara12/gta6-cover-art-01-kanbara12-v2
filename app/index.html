@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crimson Palms Cover Press v2</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23c1123f'/%3E%3Ccircle cx='16' cy='14' r='7' fill='%23ffc46b'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>Crimson Palms Cover Press</h1>
+    <p class="tagline">Turn your photo into a Vice City poster cover. Photos never leave this machine.</p>
+  </div>
+  <div class="version">v2 &middot; offline</div>
+</header>
+<main class="editor">
+  <section class="controls" aria-label="Editor controls">
+    <h2>Your photo</h2>
+    <p class="hint">Two sample photos are loaded. You can also use one of your own.</p>
+    <label class="upload-btn">Upload your photo
+      <input id="upload-input" type="file" accept="image/*">
+    </label>
+    <h2>Layout</h2>
+    <div id="layout-chips" class="chips"></div>
+    <h2>Grade</h2>
+    <div id="grade-chips" class="chips"></div>
+    <h2>Panel framing</h2>
+    <p class="hint">Each photo panel crops around the face. Nudge it when the framing is off.</p>
+    <div id="nudge-box"></div>
+    <h2>Words</h2>
+    <label class="field">Title
+      <input id="title-input" type="text" value="CRIMSON PALMS" maxlength="40">
+    </label>
+    <label class="field">Subtitle
+      <input id="subtitle-input" type="text" value="A Vice City story" maxlength="60">
+    </label>
+    <label class="field">Quote pill
+      <input id="quote-input" type="text" value="ONLY IN VICE CITY" maxlength="40">
+    </label>
+    <label class="check-row">
+      <input id="billing-toggle" type="checkbox" checked>
+      Show billing block and rating seal
+    </label>
+    <h2>Export PNG</h2>
+    <div class="exports">
+      <button type="button" data-export="1080x1080">1080 &times; 1080</button>
+      <button type="button" data-export="1080x1350">1080 &times; 1350</button>
+      <button type="button" data-export="1920x1080">1920 &times; 1080</button>
+    </div>
+  </section>
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="cover-canvas" width="1280" height="720"></canvas>
+    <p id="status-line" class="status" role="status">Loading sample photos&hellip;</p>
+  </section>
+</main>
+<footer class="foot">
+  <p>Your own lettering and art only. No Rockstar logo, artwork or font is used here. Everything runs offline in this browser.</p>
+</footer>
+<script src="src/cover.js"></script>
+<script src="src/main.js"></script>
+<script src="src/shots.js"></script>
+</body>
+</html>
